@@ -18,13 +18,14 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+html{font-size:13px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.55}
 .in{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 .ribbon{background:var(--rose);color:#fff;text-align:center;font-weight:700;font-size:.92rem;letter-spacing:.02em}
 .ribbon .in{padding-block:8px}
 .top{background:#fff}
-.top .in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px}
-.logo{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,3rem);color:var(--cocoa);margin:0;line-height:1;text-decoration:none}
+.top .in{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:14px}
+.logo{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3vw,1.9rem);color:var(--cocoa);margin:0;line-height:1;text-decoration:none}
 .logo i{color:var(--rose-deep);font-style:italic}
 .search{display:flex;border:2px solid var(--line);border-radius:999px;overflow:hidden;min-width:0;flex:0 1 360px}
 .search input{border:0;padding:10px 18px;font:inherit;flex:1;min-width:0;background:#fff;color:var(--ink);outline:none}
@@ -32,35 +33,38 @@ body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);f
 .search:focus-within{border-color:var(--rose-deep)}
 nav.bar{background:var(--cocoa);position:sticky;top:env(safe-area-inset-top,0px);z-index:10}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--cocoa)}
-nav.bar .in{display:flex;overflow-x:auto;scrollbar-width:none}
-nav.bar a{color:#f3e6df;text-decoration:none;text-transform:uppercase;font-weight:900;letter-spacing:.06em;font-size:.88rem;padding:16px 18px;white-space:nowrap}
+nav.bar .in{display:flex;flex-wrap:wrap;justify-content:center}
+nav.bar a{color:#f3e6df;text-decoration:none;text-transform:uppercase;font-weight:900;letter-spacing:.06em;font-size:.72rem;padding:9px 11px;white-space:nowrap}
 nav.bar a:hover,nav.bar a:focus-visible,nav.bar a.on{background:var(--rose);color:#fff;outline:none}
 .hero{background:var(--blush);text-align:center;border-bottom:1px solid var(--line)}
-.hero .in{padding-block:64px 70px}
-.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.1;margin:0;text-wrap:balance;color:var(--cocoa-dark)}
+.hero .in{padding-block:34px 38px}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,3.5vw,2.3rem);line-height:1.1;margin:0;text-wrap:balance;color:var(--cocoa-dark)}
 .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 18px;margin-top:18px;font-size:.95rem}
 .pill::before{content:"";width:9px;height:9px;border-radius:50%;background:#4caf50}
-.hero p{color:var(--muted);font-size:1.2rem;max-width:56ch;margin:20px auto 0}
+.hero p{color:var(--muted);font-size:1rem;max-width:56ch;margin:20px auto 0}
 .btn{display:inline-block;background:var(--cocoa);color:#fff;text-decoration:none;font-weight:900;letter-spacing:.06em;text-transform:uppercase;border:0;border-radius:999px;padding:14px 40px;margin-top:28px;font:inherit;font-weight:900;cursor:pointer}
 .btn:hover{background:var(--cocoa-dark)}
 .banner{background:#fff3c4;border:1px solid #f1dc8a;border-radius:12px;padding:10px 16px;margin:22px auto 0;max-width:640px;font-weight:700}
 .banner code{background:#fff;border-radius:6px;padding:1px 8px;user-select:all}
 .band{border-bottom:1px solid var(--line)}
 .band.pink{background:var(--blush)}
-.band .in{padding-block:56px 64px}
-h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 28px;padding-bottom:14px;border-bottom:2px solid var(--line);text-wrap:balance}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:32px}
+.band .in{padding-block:30px 34px}
+h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,2.4vw,1.55rem);margin:0 0 16px;padding-bottom:14px;border-bottom:2px solid var(--line);text-wrap:balance}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 20px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font:inherit;font-weight:700;font-size:.85rem;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--cocoa);border-color:var(--cocoa);color:#fff}
 .item{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
 .pic{aspect-ratio:4/3;max-width:100%;background:var(--blush);display:grid;place-items:center;overflow:hidden;font-size:4.5rem}
 .pic img{width:100%;height:100%;object-fit:cover;display:block}
 .body{padding:18px 22px 22px;display:flex;flex-direction:column;flex:1}
 .cat{color:var(--rose-deep);text-transform:uppercase;font-weight:900;font-size:.78rem;letter-spacing:.08em}
-.item h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;margin:4px 0 6px;line-height:1.2}
+.item h3{font-family:var(--serif);font-weight:500;font-size:1.1rem;margin:4px 0 6px;line-height:1.2}
 .desc{color:var(--muted);margin:0 0 10px;flex:1}
 .stock{font-size:.8rem;color:var(--muted);margin-bottom:10px}
 .buyrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.price{font-weight:900;font-size:1.35rem;font-variant-numeric:tabular-nums}
-.buy{background:var(--cocoa);color:#fff;border:0;border-radius:999px;font:inherit;font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:.88rem;padding:9px 20px;cursor:pointer}
+.price{font-weight:900;font-size:1rem;font-variant-numeric:tabular-nums}
+.buy{background:var(--cocoa);color:#fff;border:0;border-radius:999px;font:inherit;font-weight:900;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;font-size:.78rem;padding:9px 20px;cursor:pointer}
 .buy:hover{background:var(--cocoa-dark)}
 .buy:disabled{background:#c9b8b0;cursor:not-allowed}
 .wish{background:#fff;border:1px solid var(--line);border-radius:999px;width:38px;height:38px;color:var(--rose-deep);font-size:1.1rem;cursor:pointer;flex:none}
@@ -70,25 +74,25 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(-
 .box{background:#fff;border:1px solid var(--line);padding:22px 26px}
 .qa details{border-bottom:1px solid var(--line);padding:14px 0}
 .qa details:last-child{border-bottom:0}
-.qa summary{font-family:var(--serif);font-size:1.25rem;cursor:pointer}
+.qa summary{font-family:var(--serif);font-size:1.05rem;cursor:pointer}
 .qa p{margin:8px 0 0;color:var(--muted)}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:start}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px}
 .card{background:#fff;border:1px solid var(--line);padding:22px;min-width:0}
-.card h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;margin:6px 0}
+.card h3{font-family:var(--serif);font-weight:500;font-size:1.1rem;margin:6px 0}
 .stars{color:#d79b00;letter-spacing:2px}
 .who{color:var(--muted);font-size:.9rem}
 .emo{font-size:2.4rem;line-height:1}
 .role{color:var(--rose-deep);text-transform:uppercase;font-weight:900;font-size:.75rem;letter-spacing:.08em}
-.recipe h3{font-family:var(--serif);font-weight:700;font-size:1.7rem;margin:0}
+.recipe h3{font-family:var(--serif);font-weight:700;font-size:1.2rem;margin:0}
 .recipe h4{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--rose-deep);margin:18px 0 6px}
 .recipe ul{columns:2;gap:24px;margin:0;padding-left:20px}
 .meta{color:var(--muted);margin:4px 0 0}
 .tip{background:var(--blush);padding:10px 14px;margin-top:16px}
-.about h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;line-height:1.35;margin:0 0 14px}
+.about h3{font-family:var(--serif);font-weight:500;font-size:1.2rem;line-height:1.35;margin:0 0 14px}
 .about p{color:var(--muted)}
 .avail{background:var(--blush);border:1px solid var(--line);padding:16px 20px}
-.art{aspect-ratio:1/1;max-width:100%;background:var(--blush);border:1px solid var(--line);display:grid;place-items:center;font-size:6rem}
+.art{aspect-ratio:1/1;max-width:320px;width:100%;justify-self:center;background:var(--blush);border:1px solid var(--line);display:grid;place-items:center;font-size:4rem}
 .cotm{margin-top:24px;text-align:center}
 footer{background:var(--cocoa);color:#f3e6df;text-align:center}
 footer .in{padding-block:36px}
@@ -96,7 +100,7 @@ footer .fl{font-family:var(--serif);font-size:1.6rem;color:#fff}
 footer b{user-select:all}
 .overlay{position:fixed;inset:0;background:rgba(40,25,20,.55);display:grid;place-items:center;padding:16px;z-index:30}
 .sheet{background:#fff;width:min(460px,100%);max-height:90vh;overflow:auto;padding:30px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.sheet h3{font-family:var(--serif);font-size:1.8rem;margin:0}
+.sheet h3{font-family:var(--serif);font-size:1.4rem;margin:0}
 .sheet label{display:block;text-transform:uppercase;letter-spacing:.06em;font-weight:900;font-size:.78rem;margin-top:14px}
 .sheet input,.sheet textarea{width:100%;font:inherit;padding:10px 14px;border:2px solid var(--line);border-radius:6px;margin-top:4px;color:var(--ink);background:#fff}
 .sheet input:focus,.sheet textarea:focus{border-color:var(--rose-deep);outline:none}
@@ -131,7 +135,7 @@ footer b{user-select:all}
 </div></section>
 
 <section class="band" id="shop"><div class="in">
-  <h2 id="shopTitle">All Items</h2>
+  <h2 id="shopTitle">Shop</h2>
   <div class="grid" id="grid"></div>
 </div></section>
 
@@ -151,7 +155,7 @@ footer b{user-select:all}
 
 <script>
 /* A saved copy of the K & A Google Sheet, shown first; loadLive() then swaps in the sheet's current contents. */
-let SHEET = {"Cookies and Co": [{"name": "🍪 Cookie Box", "price": "7.99", "category": "Baked goods", "description": "6 freshly baked cookies — pick your favorite flavor!", "photo": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format&fit=crop", "tag": "", "announcement": "You get $5 off on your first order! We also don't have tax for all the orders!", "announcetype": "info", "announcementexpiry": "5-10-26", "discountcode": "Doonie macatoonie", "cotmname": "Pallavi and Sanket Dhruva.", "cotmreason": "They let all of this happen. Without them, there would be no Cookies and Co!", "stock": "10"}, {"name": "string box", "price": "5.99", "category": "Toys and fun things", "description": "A big bunch of string for home!", "photo": "https://media.istockphoto.com/id/1443303638/photo/multicolored-threads-background.jpg?s=1024x1024&w=is&k=20&c=UMnlePMlPruIBPVUhPMawJh6mRHKLYc11qfoUnhMghM=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🍫 Brownie Bites", "price": "10.99", "category": "Baked goods", "description": "10 warm, yummy brownies.", "photo": "https://images.unsplash.com/photo-1515037893149-de7f840978e2?w=600&auto=format&fit=crop", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🧁 Frosted Cupcakes", "price": "3.99", "category": "Baked goods", "description": "2 beautifuly decorated cupcakes!", "photo": "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=600&auto=format&fit=crop", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🍪 Chocolate Cookies w/ Caramel", "price": "5.99", "category": "Baked goods", "description": "Get 6 cookies, when you bite into it, there's caremel!", "photo": "https://i.imgur.com/EjZ2l9k.jpeg", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📿 Braclet Bundle (x3)", "price": "4.99", "category": "Bracelets", "description": "Get three braclets, any color, any type", "photo": "https://media.istockphoto.com/id/2200814423/photo/friendship-bracelet-supplies-on-pink-background.jpg?s=1024x1024&w=is&k=20&c=ySixPV25BrEwsbGUlc039YQYCp1q5-gislPsdFcvjyY=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📿 Friendship Bracelet", "price": "1.99", "category": "Bracelets", "description": "Get one braclet of any color", "photo": "https://media.istockphoto.com/id/2195846072/photo/best-friends.webp?a=1&b=1&s=612x612&w=0&k=20&c=-uZw0FvVUqo8Q5063tVKUqxCe9eL5FIHpsDSfgvgNp4=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🎁 Mystery Toy", "price": "1.99", "category": "Toys and fun things", "description": "Hannah makes a handmade mystery toy for you", "photo": "https://media.istockphoto.com/id/2195873592/photo/3d-surprise-gift-box-with-question-mark.jpg?s=1024x1024&w=is&k=20&c=D-HOT0UNCuDWPnwhQsowRr9nsFR_GAC1fZK0ugJhHjM=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "Red velet cookies w/chocolate chips", "price": "6.84", "category": "Toys and fun things", "description": "Yummy red cookies, with bits of chocolate! Choose how many!", "photo": "https://media.istockphoto.com/id/845455508/photo/red-velvet-chocolate-chip-cookies.jpg?s=1024x1024&w=is&k=20&c=0DjEF-T6z7uL2e3pUmTWscHfQTGI_HNbdPKAbgsHqyM=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "Slime", "price": "2.99", "category": "Toys and fun things", "description": "Choose your own color or have a mystry one, hand made, any type!", "photo": "https://images.unsplash.com/photo-1631931931379-9dc037ac6a9d?q=80&w=2210&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "💳Duct tape wallet", "price": "4.99", "category": "Everyday life uses", "description": "Everyday life uses Akira will make it for you tell her what color/pattern you want", "photo": "https://images.unsplash.com/photo-1659605445610-553ef57d31aa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📗Our big book!", "price": "30.99", "category": "Everyday life uses", "description": "You get our big recipie book, and our activie book! That means no more ordering from us! Boo-hoo-hoo!", "photo": "https://media.istockphoto.com/id/2188707237/photo/vintage-recipe-or-cook-book-various-vegetables-and-vintage-kitchen-utensils-free-copy-space.jpg?s=1024x1024&w=is&k=20&c=kNVLLciL0c2_MgA6IIwulYkGFNC97i1JxD69CbJtHu0=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🎀Ribbon Clip", "price": "3.99", "category": "Toys and fun things", "description": "Shreya will make a handmade clip made from pipe cleaners.", "photo": "https://plus.unsplash.com/premium_photo-1705346738249-c23ca984707e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🍞Banana bread loaf", "price": "7.99", "category": "Baked goods", "description": "Natalie bakes and hand cuts a fresh loaf of chocolate chip banana bread", "photo": "https://images.unsplash.com/photo-1569762404472-026308ba6b64?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📓Sequined notebook", "price": "3.99", "category": "Toys and fun things", "description": "Akira will make gently folded sequins wrapped around a handmade notebook", "photo": "https://media.istockphoto.com/id/2195014679/photo/gold-colored-diary-pen-on-bright-background-new-year-planning-concept-minimalistic-workstation.jpg?s=1024x1024&w=is&k=20&c=bUTiHf4TOJQ7jwjqLCNfuzQS3eXFee9g8TOYxDMPXjA=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}], "Q&A": [{"question": "Where do I pick up?", "answer": "You wil pick up at my house, but I will email you, so don't worry"}], "Photos": [], "Blog": [{"emoji": "🧁", "category": "Baking", "title": "Baking Tips", "content": "1. Always use softend butter. 2. Always take out the pan alittle early, the item continues to bake on the pan! 3. Always put your treat on a cooling rack, otherwise they will get soggy."}], "Reviews": [{"name": "Agastya", "stars": "5", "review": "The slime was so soft and fluffy! I got 3 orders with different colors and textures and it was perfect!!", "date": "5/17/26"}], "How its made": [{"item": "Cookies", "emoji": "🍪", "steps": "Ingredients: 2¼ cups flour, 1 tsp baking soda, 1 tsp salt, 1 cup butter, ¾ cup sugar, ¾ cup brown sugar, 2 eggs, 2 tsp vanilla, 2 cups chocolate chips                  Instructions: Step 1: Mix flour, baking soda, salt. Step 2: Cream butter and sugars. Add eggs and vanilla. Step 3: Combine wet and dry. Stir in chips. Step 4: Drop spoonfuls on the tray. Bake 375°F for 10 min. 💡 Tip: Underbake slightly for chewy cookies!", "time": "About 40 minutes", "difficulty": "3 out of 5"}], "Team": [{"name": "A & K", "role": "Founder and owner", "emoji": "💃🏾", "bio": "A&K are the founder and creater of Cookies and co! They are the ones who bake all these goods!"}], "About": [{"field": "emoji", "value": "🥰"}, {"field": "bio", "value": "Hi! I'm Ahana — the owner of Cookies & Co. 👑"}, {"field": "team", "value": "Akira, Shreya, Natalie & Hannah"}, {"field": "note", "value": "We only do pickups (for now), so once you order I will email you! BTW I live in the San Fransisco Bay Area, so don't order it if you live in Delaware!"}]};
+let SHEET = {"Cookies and Co": [{"name": "🍪 Cookie Box", "price": "7.99", "category": "Baked goods", "description": "6 freshly baked cookies — pick your favorite flavor!", "photo": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&auto=format&fit=crop", "tag": "", "announcement": "You get $5 off on your first order! We also don't have tax for all the orders!", "announcetype": "info", "announcementexpiry": "5-10-26", "discountcode": "Doonie macatoonie", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "string box", "price": "5.99", "category": "Toys and fun things", "description": "A big bunch of string for home!", "photo": "https://media.istockphoto.com/id/1443303638/photo/multicolored-threads-background.jpg?s=1024x1024&w=is&k=20&c=UMnlePMlPruIBPVUhPMawJh6mRHKLYc11qfoUnhMghM=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🍫 Brownie Bites", "price": "10.99", "category": "Baked goods", "description": "10 warm, yummy brownies.", "photo": "https://images.unsplash.com/photo-1515037893149-de7f840978e2?w=600&auto=format&fit=crop", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🧁 Frosted Cupcakes", "price": "3.99", "category": "Baked goods", "description": "2 beautifuly decorated cupcakes!", "photo": "https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=600&auto=format&fit=crop", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🍪 Chocolate Cookies w/ Caramel", "price": "5.99", "category": "Baked goods", "description": "Get 6 cookies, when you bite into it, there's caremel!", "photo": "https://i.imgur.com/EjZ2l9k.jpeg", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📿 Braclet Bundle (x3)", "price": "4.99", "category": "Bracelets", "description": "Get three braclets, any color, any type", "photo": "https://media.istockphoto.com/id/2200814423/photo/friendship-bracelet-supplies-on-pink-background.jpg?s=1024x1024&w=is&k=20&c=ySixPV25BrEwsbGUlc039YQYCp1q5-gislPsdFcvjyY=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📿 Friendship Bracelet", "price": "1.99", "category": "Bracelets", "description": "Get one braclet of any color", "photo": "https://media.istockphoto.com/id/2195846072/photo/best-friends.webp?a=1&b=1&s=612x612&w=0&k=20&c=-uZw0FvVUqo8Q5063tVKUqxCe9eL5FIHpsDSfgvgNp4=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🎁 Mystery Toy", "price": "1.99", "category": "Toys and fun things", "description": "Hannah makes a handmade mystery toy for you", "photo": "https://media.istockphoto.com/id/2195873592/photo/3d-surprise-gift-box-with-question-mark.jpg?s=1024x1024&w=is&k=20&c=D-HOT0UNCuDWPnwhQsowRr9nsFR_GAC1fZK0ugJhHjM=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "Red velet cookies w/chocolate chips", "price": "6.84", "category": "Toys and fun things", "description": "Yummy red cookies, with bits of chocolate! Choose how many!", "photo": "https://media.istockphoto.com/id/845455508/photo/red-velvet-chocolate-chip-cookies.jpg?s=1024x1024&w=is&k=20&c=0DjEF-T6z7uL2e3pUmTWscHfQTGI_HNbdPKAbgsHqyM=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "Slime", "price": "2.99", "category": "Toys and fun things", "description": "Choose your own color or have a mystry one, hand made, any type!", "photo": "https://images.unsplash.com/photo-1631931931379-9dc037ac6a9d?q=80&w=2210&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "💳Duct tape wallet", "price": "4.99", "category": "Everyday life uses", "description": "Everyday life uses Akira will make it for you tell her what color/pattern you want", "photo": "https://images.unsplash.com/photo-1659605445610-553ef57d31aa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📗Our big book!", "price": "30.99", "category": "Everyday life uses", "description": "You get our big recipie book, and our activie book! That means no more ordering from us! Boo-hoo-hoo!", "photo": "https://media.istockphoto.com/id/2188707237/photo/vintage-recipe-or-cook-book-various-vegetables-and-vintage-kitchen-utensils-free-copy-space.jpg?s=1024x1024&w=is&k=20&c=kNVLLciL0c2_MgA6IIwulYkGFNC97i1JxD69CbJtHu0=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🎀Ribbon Clip", "price": "3.99", "category": "Toys and fun things", "description": "Shreya will make a handmade clip made from pipe cleaners.", "photo": "https://plus.unsplash.com/premium_photo-1705346738249-c23ca984707e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "🍞Banana bread loaf", "price": "7.99", "category": "Baked goods", "description": "Natalie bakes and hand cuts a fresh loaf of chocolate chip banana bread", "photo": "https://images.unsplash.com/photo-1569762404472-026308ba6b64?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}, {"name": "📓Sequined notebook", "price": "3.99", "category": "Toys and fun things", "description": "Akira will make gently folded sequins wrapped around a handmade notebook", "photo": "https://media.istockphoto.com/id/2195014679/photo/gold-colored-diary-pen-on-bright-background-new-year-planning-concept-minimalistic-workstation.jpg?s=1024x1024&w=is&k=20&c=bUTiHf4TOJQ7jwjqLCNfuzQS3eXFee9g8TOYxDMPXjA=", "tag": "", "announcement": "", "announcetype": "", "announcementexpiry": "", "discountcode": "", "cotmname": "", "cotmreason": "", "stock": "10"}], "Q&A": [{"question": "Where do I pick up?", "answer": "You wil pick up at my house, but I will email you, so don't worry"}], "Photos": [], "Blog": [{"emoji": "🧁", "category": "Baking", "title": "Baking Tips", "content": "1. Always use softend butter. 2. Always take out the pan alittle early, the item continues to bake on the pan! 3. Always put your treat on a cooling rack, otherwise they will get soggy."}], "Reviews": [{"name": "Agastya", "stars": "5", "review": "The slime was so soft and fluffy! I got 3 orders with different colors and textures and it was perfect!!", "date": "5/17/26"}], "How its made": [{"item": "Cookies", "emoji": "🍪", "steps": "Ingredients: 2¼ cups flour, 1 tsp baking soda, 1 tsp salt, 1 cup butter, ¾ cup sugar, ¾ cup brown sugar, 2 eggs, 2 tsp vanilla, 2 cups chocolate chips                  Instructions: Step 1: Mix flour, baking soda, salt. Step 2: Cream butter and sugars. Add eggs and vanilla. Step 3: Combine wet and dry. Stir in chips. Step 4: Drop spoonfuls on the tray. Bake 375°F for 10 min. 💡 Tip: Underbake slightly for chewy cookies!", "time": "About 40 minutes", "difficulty": "3 out of 5"}], "Team": [{"name": "A & K", "role": "Founder and owner", "emoji": "💃🏾", "bio": "A&K are the founder and creater of Cookies and co! They are the ones who bake all these goods!"}], "About": [{"field": "emoji", "value": "🥰"}, {"field": "bio", "value": "Hi! I'm Ahana — the owner of Cookies & Co. 👑"}, {"field": "team", "value": "Akira, Shreya, Natalie & Hannah"}, {"field": "note", "value": "We only do pickups (for now), so once you order I will email you! BTW I live in the San Fransisco Bay Area, so don't order it if you live in Delaware!"}]};
 const EMAIL = "ahana.dhruva@gmail.com";
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let MENU=[];
@@ -165,12 +169,9 @@ let cat="All Items", query="";
 
 /* nav: categories filter the shop; the rest jump to sections */
 function buildNav(){
-  const cats=[...new Set(MENU.map(m=>m.category).filter(Boolean))];
-  if(cat!=="All Items"&&!cats.includes(cat)) cat="All Items";
-  const links=[["All Items","#shop",1],...cats.map(c=>[c,"#shop",1]),["Q&A","#qa"],["Blog","#blog"],["Reviews","#reviews"],["Team","#team"],["How It's Made","#made"],["About","#about"]];
-  document.getElementById("navIn").innerHTML=links.map(([t,h,f])=>`<a href="${h}" ${f?`data-cat="${esc(t)}"`:""} class="${f&&t===cat?"on":""}">${esc(t)}</a>`).join("");
+  const links=[["Shop","#shop"],["Q&A","#qa"],["Photos","#photos"],["Blog","#blog"],["Reviews","#reviews"],["Team","#team"],["How It's Made","#made"],["About","#about"]];
+  document.getElementById("navIn").innerHTML=links.map(([t,h])=>`<a href="${h}">${esc(t)}</a>`).join("");
 }
-document.getElementById("navIn").addEventListener("click",e=>{const a=e.target.closest("a[data-cat]");if(!a)return;cat=a.dataset.cat;document.querySelectorAll("#navIn a").forEach(x=>x.classList.toggle("on",x===a));renderShop()});
 document.getElementById("q").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();renderShop();if(query)document.getElementById("shop").scrollIntoView()});
 
 function renderBanner(){
@@ -200,7 +201,7 @@ async function loadLive(){
   try{
     const got=await Promise.all(TABS.map(async t=>{
       const r=await fetch(`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent(t)}&t=${Date.now()}`);
-      if(!r.ok) throw new Error(t); return [t,toObjects(parseCSV(await r.text()))];
+      const txt=await r.text(); if(!r.ok||/^\s*</.test(txt)) throw new Error(t); return [t,toObjects(parseCSV(txt))];
     }));
     const live=Object.fromEntries(got);
     if(!(live["Cookies and Co"]||[]).length) return;
@@ -218,7 +219,7 @@ function picHTML(m){
 }
 function renderShop(){
   const items=MENU.filter(m=>(cat==="All Items"||m.category===cat)&&(!query||(m.name+" "+m.description+" "+m.category).toLowerCase().includes(query)));
-  document.getElementById("shopTitle").textContent=query?`Results for “${query}”`:cat;
+  document.getElementById("shopTitle").textContent=query?`Results for “${query}”`:"Shop";
   document.getElementById("grid").innerHTML=items.length?items.map(m=>{
     const {label}=split(m.name); const stock=parseInt(m.stock); const out=!isNaN(stock)&&stock<=0; const on=wish.includes(label);
     return `<article class="item"><div class="pic">${picHTML(m)}</div><div class="body">
@@ -291,7 +292,8 @@ function openOrder(i){
     sheet.innerHTML=`<h3>Thank you, ${esc(order.name)}!</h3>
       <p>${emailed?"Your order was emailed to us! We'll email you back to set up pickup. If you'd like, you can also send a copy to":saved?"Your order was sent to us. You can also email a copy to":"Last step: email your order to"} <b style="user-select:all">${EMAIL}</b></p>
       <pre id="otext">${esc(text)}</pre>
-      <div class="row"><button class="cancel" id="copyBtn">Copy order</button><a class="go" style="text-align:center;text-decoration:none" href="mailto:${EMAIL}?subject=${subject}&body=${body}">Open email</a></div>
+      <div class="row"><button class="cancel" id="copyBtn">Copy order</button><a class="go" style="text-align:center;text-decoration:none" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${subject}&body=${body}">Open Gmail</a></div>
+      <p class="note" style="text-align:center">Don't use Gmail? <a href="mailto:${EMAIL}?subject=${subject}&body=${body}" style="color:var(--rose-deep)">Open a different email app</a></p>
       <div class="row"><button class="cancel" id="doneBtn" style="flex:1">Done</button></div>`;
     document.getElementById("doneBtn").onclick=closeOrder;
     const cb=document.getElementById("copyBtn");
